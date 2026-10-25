@@ -1,0 +1,14 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Data files
+*.csv
+Maddison Project Dataset.xlsx
+
+# Temporary Excel files
+~$*.xlsx
+
+# Quarto output
+*.html

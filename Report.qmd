@@ -4,23 +4,61 @@ format: html
 editor: visual
 ---
 
-## Quarto
+# 1. Business Understanding
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## 1.1 Background and Motivation
 
-## Running Code
+The Global Financial Crisis of 2007–2009 was a major economic event that affected economies worldwide (International Monetary Fund, 2009).
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+This study focuses on the five largest economies in 2006, ranked by total real GDP expressed in 2011 international dollars, calculated using data from the Maddison Project Database 2023 (Bolt and van Zanden, 2024). Former USSR was excluded from the ranking because the Soviet Union had ceased to exist as a political entity in 1991 (U.S. Department of State, n.d.) and was therefore not considered a separate economy in 2006. The five selected economies are the United States, China, Japan, India, and Germany.
 
-```{r}
-1 + 1
-```
+The year 2006 serves as a pre-crisis baseline, ensuring that the economies are selected based on their economic size before the crisis rather than their performance during it.
 
-You can add options to executable code like this
+By comparing changes in real GDP per capita across these five economies from 2006 to 2009, the analysis aims to identify differences in economic performance and examine how each economy experienced the financial crisis.
 
-```{r}
-#| echo: false
-2 * 2
-```
+## 1.2 Stakeholders
 
-The `echo: false` option disables the printing of code (only output is displayed).
+The primary stakeholders of this study are economic researchers who seek to understand how real GDP per capita changed across the five largest economies in 2006 during the 2007–2009 Global Financial Crisis.
+
+Specifically, they need reliable and comparable data to identify changes in real GDP per capita, determine which economies experienced increases or decreases, and compare the magnitude of these changes relative to the 2006 baseline. These findings may help researchers identify similarities and differences in real GDP per capita trends across the five economies and areas requiring further investigation.
+
+## 1.3 Research Question
+How did real GDP per capita change between 2006 and 2009 across the five largest economies by total GDP in 2006—the United States, China, Japan, India, and Germany—during the 2007–2009 Global Financial Crisis?
+
+## 1.4 Research Objectives
+
+The objectives of this study are:
+
+1. **Examine real GDP per capita trends:** Investigate how real GDP per capita evolved across the five selected economies between 2006 and 2009.
+
+2. **Assess changes relative to the pre-crisis baseline:** Examine the direction and magnitude of changes in real GDP per capita during 2007–2009 using 2006 as the reference year.
+
+3. **Identify cross-country similarities and differences:** Explore how patterns of real GDP per capita change differed among the five economies during the Global Financial Crisis.
+
+## 1.5 Success Criteria
+
+The study will be considered successful if the following criteria are met:
+
+1. **Complete data presentation:** The report presents real GDP per capita values for all five selected economies for each year from 2006 to 2009.
+
+2. **Quantified changes:** The report calculates the percentage change in real GDP per capita for each economy in 2007, 2008 and 2009 relative to the 2006 baseline.
+
+3. **Clear visual comparison:** The visualisations enable readers to compare trends across the five economies and identify increases or decreases in real GDP per capita relative to 2006.
+x x x`
+# 2. Data Understanding
+
+# 3. Data Processing
+
+# 4. Modelling
+
+# 5. Evaluation
+
+# 6. Deployment
+
+# References
+
+Bolt, J. and van Zanden, J.L. (2024) ‘Maddison-style estimates of the evolution of the world economy: A new 2023 update’, *Journal of Economic Surveys*. Available at: https://doi.org/10.1111/joes.12618 (Accessed: 25 October 2026).
+
+International Monetary Fund (2009) *World Economic Outlook, April 2009: Crisis and Recovery*. Washington, DC: International Monetary Fund. Available at: https://doi.org/10.5089/9781589068063.081 (Accessed: 25 October 2026).
+
+U.S. Department of State (n.d.) *Russia*. Office of the Historian. Available at: https://history.state.gov/countries/russia (Accessed: 25 October 2026).

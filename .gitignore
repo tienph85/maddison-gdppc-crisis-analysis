@@ -5,7 +5,7 @@
 
 # Data files
 *.csv
-Maddison Project Dataset.xlsx
+mpd2023_web.xlsx
 
 # Temporary Excel files
 ~$*.xlsx

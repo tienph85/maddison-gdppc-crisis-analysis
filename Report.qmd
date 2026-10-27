@@ -130,6 +130,130 @@ An alternative approach would be to conduct additional statistical checks, such 
 
 # 4. Modelling
 
+```{r}
+#| label: setup
+#| include: false
+
+source("DataProcess.R")
+```
+
+
+## 4.1 Line Chart: Real GDP per Capita (2006–2009)
+
+**What was done**
+
+A line chart was created to visualise real GDP per capita across the five economies from 2006 to 2009. The horizontal axis represents `year`, while the vertical axis represents real GDP per capita (`gdppc`) in 2011 international dollars. Each economy was represented by a different colour, with points connected to show annual changes. No reference line was included because the chart focuses on real GDP per capita levels and trends over time.
+
+Table 1 was also produced to present the real GDP per capita values for all five economies in each year from 2006 to 2009. The values were rounded to the nearest whole number and expressed in 2011 international dollars. This table complements the line chart by providing the numerical values underlying the visualised trends.
+
+
+```{r}
+#| label: fig-gdppc-trends
+#| echo: false
+#| fig-cap: "Real GDP per capita across five economies, 2006–2009"
+ggplot(
+  data = sampleCountry, 
+  aes(x = year, y = gdppc, colour = country)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Real GDP per Capita Across Five Economies (2006–2009)",
+    x = "Year",
+    y = "Real GDP per Capita (2011 international dollars)",
+    colour = "Economy") +
+  scale_x_continuous(breaks = 2006:2009)
+```
+
+
+```{r}
+#| label: tbl-gdppc-values
+#| echo: false
+
+# Present real GDP per capita values for the five economies.
+sampleCountry |>
+  select(country, year, gdppc) |>
+  tidyr::pivot_wider(
+    names_from = year,
+    values_from = gdppc
+  ) |>
+  rename(Economy = country) |>
+  knitr::kable(
+    caption = "Real GDP per capita (2011 international dollars), 2006–2009",
+    digits = 0
+  )
+```
+
+
+
+**Rationale**
+
+A line chart was chosen because it is suitable for displaying changes over consecutive years. It allows readers to examine year-to-year movements in real GDP per capita and compare the direction of trends across the five economies. This supports the research objective of examining how real GDP per capita evolved throughout the study period. Comparisons of percentage changes relative to the 2006 baseline are addressed separately in Section 4.2.
+
+**Assumptions**
+
+The visualisation assumes that the annual real GDP per capita estimates are sufficiently comparable across economies and years, as described in Section 2.2. Connecting observations with lines also assumes that the ordering of years is meaningful for interpreting trends. However, the lines do not represent observed values between the annual data points.
+
+**Alternatives and limitations**
+
+An alternative would be a grouped bar chart showing real GDP per capita levels for each economy and year. However, a line chart was preferred because it makes changes over time easier to follow. One limitation is that large differences in real GDP per capita levels between economies may make smaller changes difficult to observe on a shared vertical axis.
+
+## 4.2 Grouped Bar Chart: Percentage Change Relative to 2006
+
+**What was done**
+
+A grouped bar chart was created to compare percentage changes in real GDP per capita relative to 2006. The horizontal axis represents the years 2007–2009, while the vertical axis represents `pctChange`, expressed as a percentage. The year 2006 was omitted because it serves as the baseline, making its percentage change equal to 0% for every economy. Each economy was represented by a different colour, with bars grouped by year. A horizontal reference line at 0% was included to distinguish values above and below the 2006 baseline.
+
+Table 2 was also produced to present the percentage changes in real GDP per capita for each economy in 2007, 2008 and 2009 relative to 2006. The values were rounded to two decimal places. This table complements the grouped bar chart by providing the numerical values used in the comparison.
+
+
+```{r}
+#| label: fig-gdppc-change
+#| echo: false
+#| fig-cap: "Percentage change in real GDP per capita relative to 2006"
+ggplot(
+  data = sampleCountry |> filter(year >= 2007 & year <= 2009), 
+  aes(x = factor(year), y = pctChange, fill = country)) + 
+  geom_col(position = "dodge") +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(title = "Percentage Change in Real GDP per Capita Relative to 2006", 
+        x = "Year",
+        y = "Change from 2006 (%)",
+        fill = "Economy")
+```
+
+
+```{r}
+#| label: tbl-gdppc-change
+#| echo: false
+
+# Present percentage changes in real GDP per capita relative to 2006.
+sampleCountry |>
+  filter(year >= 2007 & year <= 2009) |>
+  select(country, year, pctChange) |>
+  tidyr::pivot_wider(
+    names_from = year,
+    values_from = pctChange
+  ) |>
+  rename(Economy = country) |>
+  knitr::kable(
+    caption = "Percentage change in real GDP per capita relative to 2006 (%)",
+    digits = 2
+  )
+```
+
+
+**Rationale**
+
+A grouped bar chart was chosen because it is suitable for comparing percentage changes between economies within each year. Using percentage changes allows economies with different real GDP per capita levels to be compared on a common relative scale. The reference line makes it easier to identify whether each economy's real GDP per capita was higher or lower than its 2006 level.
+
+**Assumptions**
+
+The chart assumes that 2006 is an appropriate pre-crisis reference year and that the percentage changes calculated in Section 3.3 are valid. Each bar represents the change relative to 2006, not the change from the preceding year. The comparison is descriptive and does not establish that the Global Financial Crisis caused the observed changes.
+
+**Alternatives and limitations**
+
+An alternative would be a line chart showing percentage changes over time. However, grouped bars were preferred because they make comparisons between economies within individual years more direct. One limitation is that displaying five economies within each year may make the chart visually crowded. In addition, percentage changes do not show the absolute real GDP per capita levels, so this chart should be interpreted alongside the first visualisation.
+
 # 5. Evaluation
 
 # 6. Deployment

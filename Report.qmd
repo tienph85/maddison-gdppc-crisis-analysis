@@ -7,21 +7,24 @@ editor: visual
 # 1. Business Understanding
 
 ## 1.1 Background and Motivation
+
 The Global Financial Crisis of 2007–2009 was a major economic event that affected economies worldwide (International Monetary Fund, 2009).
 
-This study focuses on the five largest economies in 2006, ranked by total GDP expressed in 2011 international dollars, calculated using data from the Maddison Project Database 2023 (Bolt and van Zanden, 2024). Former USSR was excluded from the ranking because the Soviet Union had ceased to exist as a political entity in 1991 (U.S. Department of State, n.d.) and was therefore not considered a separate economy in 2006. The five selected economies are the United States, China, Japan, India, and Germany.
+This study focuses on the five largest economies in 2006, ranked by total real GDP expressed in 2011 international dollars, calculated using data from the Maddison Project Database 2023 (Bolt and van Zanden, 2024). Former USSR was excluded from the ranking because the Soviet Union was dissolved in 1991 (U.S. Department of State, n.d.) and was therefore not considered a separate economy in 2006. The five selected economies are the United States, China, Japan, India, and Germany.
 
 The year 2006 serves as a pre-crisis baseline, ensuring that the economies are selected based on their economic size before the crisis rather than their performance during it.
 
-By comparing changes in real GDP per capita across these five economies from 2006 to 2009, the analysis aims to identify differences in economic performance and examine how each economy experienced the financial crisis.
+By comparing changes in real GDP per capita across these five economies from 2006 to 2009, the analysis aims to identify differences in real GDP per capita trends during the Global Financial Crisis.
 
 ## 1.2 Stakeholders
+
 The primary stakeholders of this study are economic researchers who seek to understand how real GDP per capita changed across the five largest economies in 2006 during the 2007–2009 Global Financial Crisis.
 
 Specifically, they need reliable and comparable data to identify changes in real GDP per capita, determine which economies experienced increases or decreases, and compare the magnitude of these changes relative to the 2006 baseline. These findings may help researchers identify similarities and differences in real GDP per capita trends across the five economies and areas requiring further investigation.
 
 ## 1.3 Research Question
-How did real GDP per capita change between 2006 and 2009 across the five largest economies by total GDP in 2006—the United States, China, Japan, India, and Germany—during the 2007–2009 Global Financial Crisis?
+
+How did real GDP per capita change between 2006 and 2009 across the five largest economies by total real GDP in 2006—the United States, China, Japan, India, and Germany—during the 2007–2009 Global Financial Crisis?
 
 ## 1.4 Research Objectives
 
@@ -34,6 +37,7 @@ The objectives of this study are:
 3. **Identify cross-country similarities and differences:** Explore how patterns of real GDP per capita change differed among the five economies during the Global Financial Crisis.
 
 ## 1.5 Success Criteria
+
 The study will be considered successful if the following criteria are met:
 
 1. **Complete data presentation:** The report presents real GDP per capita values for all five selected economies for each year from 2006 to 2009.
@@ -45,6 +49,7 @@ The study will be considered successful if the following criteria are met:
 # 2. Data Understanding
 
 ## 2.1 Data Sources
+
 This study uses the Maddison Project Database 2023 (MPD 2023), published by the Groningen Growth and Development Centre (GGDC) at the University of Groningen, Netherlands (Bolt and van Zanden, 2024).
 
 The dataset was obtained from the Excel workbook `mpd2023_web.xlsx`, provided through Newcastle University's Canvas learning platform. Data were imported from the `Full data` worksheet, which contains historical estimates of real GDP per capita and population for economies worldwide.
@@ -52,6 +57,7 @@ The dataset was obtained from the Excel workbook `mpd2023_web.xlsx`, provided th
 These data are used to identify the five largest economies by total real GDP in 2006 and examine changes in real GDP per capita between 2006 and 2009.
 
 ## 2.2 Dataset Description
+
 The dataset contains 131,144 observations and six variables, covering the period from 1 CE to 2022. Each observation represents an economy in a particular year.
 
 The variables `countrycode`, `country` and `region` are stored as character data and identify the economy code, economy name and geographical region, respectively. The remaining variables, `year`, `gdppc` and `pop`, are stored as numeric data. The `year` variable records the observation year, `gdppc` represents real GDP per capita expressed in 2011 international dollars, and `pop` records population in thousands.
@@ -59,9 +65,10 @@ The variables `countrycode`, `country` and `region` are stored as character data
 The use of real GDP per capita in constant international dollars supports comparisons across years and economies. Constant prices account for changes in price levels over time, while international dollars account for differences in purchasing power across economies.
 
 ## 2.3 Data Quality Assessment
+
 The selected dataset contains 20 observations covering five economies from 2006 to 2009. The data quality assessment found no missing values in any of the six original variables and no duplicate observations based on `countrycode` and `year`. Each economy has four annual observations, confirming complete coverage of the study period. Furthermore, no zero or negative values were found in `gdppc` or `pop`. These results indicate that the selected data are sufficiently complete and suitable for the planned analysis without requiring missing-value imputation or the removal of invalid observations.
 
-However, the original dataset includes observations for historical entities such as Former USSR (`SUN`), Czechoslovakia (`CSK`) and Former Yugoslavia (`YUG`) in 2006. These historical entries require consideration when ranking economies by total GDP, because they may not represent separate economies existing in the baseline year.
+However, the original dataset includes observations for historical entities such as Former USSR (`SUN`), Czechoslovakia (`CSK`) and Former Yugoslavia (`YUG`) in 2006. These historical entries require consideration when ranking economies by total real GDP, because they may not represent separate economies existing in the baseline year.
 
 In particular, Former USSR would appear among the five largest entries in 2006 if included in the ranking. Since the Soviet Union dissolved in 1991 (U.S. Department of State, n.d.), `SUN` was excluded from the ranking. Following this exclusion, Germany became the fifth-largest economy. The exclusion was applied during economy selection rather than by modifying the original dataset.
 
@@ -69,13 +76,57 @@ In particular, Former USSR would appear among the five largest entries in 2006 i
 
 The `Full data` worksheet was selected because its long-format structure provides annual real GDP per capita (`gdppc`) and population (`pop`) observations for individual economies.
 
-The study focuses on the United States, China, Japan, India and Germany, selected as the five largest economies by total GDP in 2006. The period 2006–2009 was retained to compare changes in real GDP per capita against the pre-crisis baseline year of 2006.
+The study focuses on the United States, China, Japan, India and Germany, selected as the five largest economies by total real GDP in 2006. The period 2006–2009 was retained to compare changes in real GDP per capita against the pre-crisis baseline year of 2006.
 
 The `gdppc` variable is used as the main measure of interest, while `pop` is used to calculate total real GDP for selecting the five economies. The `countrycode` variable is used to filter the selected economies, while `country` provides their names for reporting and visualisation. The `year` variable identifies the observations within the study period.
 
 Former USSR (`SUN`) was excluded from the 2006 ranking because it did not represent a separate political entity in that year, as explained in Section 2.3. Years outside 2006–2009 and economies outside the selected five were excluded from the final analysis. The `region` variable was not required because the study compares individual economies rather than geographical regions.
 
 # 3. Data Preparation
+
+## 3.1 Total Real GDP Calculation
+
+A new variable, `GDP`, was calculated by multiplying real GDP per capita (`gdppc`) by population (`pop`) and dividing the result by 1,000,000. Since `pop` is measured in thousands, this conversion expresses total real GDP in billions of 2011 international dollars.
+
+Total real GDP was required to identify the five largest economies by overall economic size in 2006, rather than by real GDP per capita. Dividing by 1,000,000 also makes the resulting GDP values easier to interpret without changing the ranking.
+
+This calculation assumes that `gdppc` and `pop` refer to the same economy and year, and that both variables use the units specified in the dataset. In particular, `pop` is assumed to represent the population of that economy in the corresponding year, so multiplying it by real GDP per capita provides an estimate of total real GDP for that economy and year.
+
+An alternative would be to rank economies directly by `gdppc`, without calculating total real GDP. However, this would identify the economies with the highest real GDP per capita rather than the largest overall economies, making it inconsistent with the research question.
+
+## 3.2 Economy Selection
+
+The dataset was first filtered to retain observations from 2006. Former USSR (`SUN`) was then excluded from the ranking because it did not represent a separate economy existing in that year, as explained in Section 2.3. The remaining economies were arranged in descending order of total real GDP, and the first five entries were selected using `slice_head()`. The selected economies were the United States, China, Japan, India and Germany.
+
+The year 2006 was chosen to rank economies according to their economic size before the Global Financial Crisis, avoiding selection based on changes during the crisis.
+
+This approach assumes that the selected economy codes represent distinct, existing economies in 2006 and that total real GDP provides an appropriate basis for comparing their economic size.
+
+An alternative would be to select the five largest economies using GDP figures from 2009 or to rank them by population or real GDP per capita. However, these approaches would either use economic conditions during the crisis or measure a different characteristic from total economic size, making them less suitable for the research question.
+
+## 3.3 Analytical Dataset Preparation and Percentage Change Calculation
+
+The dataset was filtered using `top5Codes` to retain the five selected economies and observations from 2006 to 2009. The data were then grouped by `countrycode`, and a new variable, `gdppc2006`, was created to store each economy's real GDP per capita in 2006. Another variable, `pctChange`, was calculated using the following formula:
+
+$$
+\text{Percentage Change}_{t} = \frac{GDPpc_t - GDPpc_{2006}}{GDPpc_{2006}} \times 100
+$$
+
+Grouping by `countrycode` ensures that each economy is compared with its own 2006 real GDP per capita rather than another economy's value. Using 2006 as a fixed pre-crisis baseline allows changes to be compared across the study period. Percentage changes were preferred over absolute differences because the selected economies had substantially different real GDP per capita levels, making relative changes more comparable.
+
+This calculation assumes that each economy has a valid and non-zero real GDP per capita observation for 2006, as confirmed in Section 2.3. All percentage changes are measured relative to the fixed 2006 baseline, rather than the preceding year.
+
+An alternative would be to calculate year-on-year percentage changes or construct an index with 2006 equal to 100. However, year-on-year changes would measure changes between consecutive years rather than against the pre-crisis baseline. A base-year index would provide similar comparative information, but percentage changes were selected because they directly show the magnitude and direction of changes relative to 2006, as required by the research question.
+
+## 3.4 Dataset Validation
+
+The final analytical dataset, `sampleCountry`, was validated after data processing. It contains 20 observations and eight variables, covering five economies from 2006 to 2009. The validation found no missing values in any of the eight variables, no duplicate records based on `countrycode` and `year`, and four annual observations for each economy. Furthermore, no zero or negative values were found in `gdppc` or `pop`.
+
+These checks were conducted to ensure that the dataset remained complete and suitable for analysis after creating the `gdppc2006` and `pctChange` variables. The percentage change calculation was also examined. All five economies had a percentage change of 0% in 2006, while the results for 2007–2009 were consistent with their corresponding real GDP per capita values. For example, Japan and the United States recorded negative percentage changes in 2009 because their real GDP per capita values were lower than their respective 2006 levels.
+
+The validation assumes that the original real GDP per capita and population estimates are reliable and that the absence of missing values, duplicates and non-positive values indicates basic data consistency. However, these checks do not guarantee that all observations are free from measurement errors.
+
+An alternative approach would be to conduct additional statistical checks, such as outlier detection or comparisons with external data sources. These were not applied because the validation focused on data completeness, consistency and the correctness of the calculated variables required to address the research question.
 
 # 4. Modelling
 
@@ -85,8 +136,8 @@ Former USSR (`SUN`) was excluded from the 2006 ranking because it did not repres
 
 # References
 
-Bolt, J. and van Zanden, J.L. (2024) ‘Maddison-style estimates of the evolution of the world economy: A new 2023 update’, *Journal of Economic Surveys*. Available at: https://doi.org/10.1111/joes.12618 (Accessed: 25 October 2026).
+Bolt, J. and van Zanden, J.L. (2024) ‘Maddison-style estimates of the evolution of the world economy: A new 2023 update’, *Journal of Economic Surveys*. Available at: <https://doi.org/10.1111/joes.12618> (Accessed: 25 October 2026).
 
-International Monetary Fund (2009) *World Economic Outlook, April 2009: Crisis and Recovery*. Washington, DC: International Monetary Fund. Available at: https://doi.org/10.5089/9781589068063.081 (Accessed: 25 October 2026).
+International Monetary Fund (2009) *World Economic Outlook, April 2009: Crisis and Recovery*. Washington, DC: International Monetary Fund. Available at: <https://doi.org/10.5089/9781589068063.081> (Accessed: 25 October 2026).
 
-U.S. Department of State (n.d.) *Russia*. Office of the Historian. Available at: https://history.state.gov/countries/russia (Accessed: 25 October 2026).
+U.S. Department of State (n.d.) *Russia*. Office of the Historian. Available at: <https://history.state.gov/countries/russia> (Accessed: 25 October 2026).

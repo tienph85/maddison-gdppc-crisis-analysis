@@ -18,7 +18,7 @@ range(dataset$year, na.rm = TRUE)
 
 # Data Preparation
 
-# Calculate total real GDP in billions of 2011 international dollars.
+# Calculate total GDP in billions of 2011 international dollars.
 # Population is recorded in thousands, so dividing by 1,000,000
 # converts GDP from thousands of dollars to billions of dollars.
 datasetWithGDP <- mutate(
@@ -37,7 +37,7 @@ gdpRank2006Filter <- filter(
   countrycode != "SUN"
 )
 
-# Rank the remaining economies by total real GDP in descending order.
+# Rank the remaining economies by total GDP in descending order.
 gdpRank2006 <- arrange(gdpRank2006Filter, desc(GDP))
 
 # Select the five largest economies in 2006.
@@ -116,5 +116,10 @@ sampleCountry |>
 
 # Check percentage changes for all five economies from 2006 to 2009.
 sampleCountry |>
+  select(countrycode, year, pctChange)
+
+# Check percentage changes from 2007 to 2009.
+sampleCountry |>
+  filter(year >= 2007 & year <= 2009) |>
   select(countrycode, year, pctChange)
 

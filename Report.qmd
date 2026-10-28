@@ -256,6 +256,56 @@ An alternative would be a line chart showing percentage changes over time. Howev
 
 # 5. Evaluation
 
+## 5.1 Key Findings and Cross-Country Comparison
+
+The results show different patterns of real GDP per capita change across the five selected economies between 2006 and 2009. As shown in Table 2, China recorded the largest increase, with real GDP per capita rising by 20.12% in 2009 relative to 2006, followed by India at 17.67%. Germany also recorded an increase of 2.50% over the same period. In contrast, Japan and the United States recorded decreases of 4.93% and 4.03%, respectively, in 2009 relative to the 2006 baseline.
+
+The visualisations also reveal similarities and differences in annual trends. China and India experienced continuous increases in real GDP per capita throughout 2006–2009. In contrast, Germany, Japan and the United States all experienced declines between 2008 and 2009. However, Germany's real GDP per capita in 2009 remained above its 2006 level, whereas Japan and the United States fell below their respective 2006 levels.
+
+The differences in percentage changes were substantial. In 2009, the change in China's real GDP per capita relative to 2006 was 25.05 percentage points higher than Japan's, representing the largest difference among the five economies. These results demonstrate that the selected economies followed different real GDP per capita trajectories during the period examined.
+
+However, these findings describe observed changes and comparisons rather than establishing their causes. Although the study covers the period of the Global Financial Crisis, the data do not establish that the crisis caused the observed increases or decreases in real GDP per capita.
+
+## 5.2 Evaluation Against Success Criteria
+
+The analysis was evaluated against the three success criteria established in Section 1.5.
+
+**Criterion 1 — Complete data presentation**
+
+The first criterion required real GDP per capita values for all five selected economies from 2006 to 2009. This criterion was met, as Table 1 presents all 20 values, covering five economies across four years. The values were rounded to the nearest whole number for presentation, so minor decimal details are not displayed.
+
+**Criterion 2 — Quantified changes**
+
+The second criterion required percentage changes in real GDP per capita for each economy in 2007, 2008 and 2009 relative to the 2006 baseline. This criterion was met, as Table 2 reports all 15 percentage changes calculated using the method described in Section 3.3. The results are presented to two decimal places, so small differences may be hidden by rounding.
+
+**Criterion 3 — Clear visual comparison**
+
+The third criterion required visualisations that allow comparisons of trends across the five economies and identification of increases or decreases relative to 2006. This criterion was met. Figure 1 shows annual real GDP per capita trends, while Figure 2 displays percentage changes relative to the 2006 baseline. However, large differences in real GDP per capita levels make smaller movements less visible in Figure 1, and the grouped bars in Figure 2 may be visually crowded.
+
+Overall, all three success criteria were met. The tables provide the required numerical results, while the two figures support comparisons across the selected economies. These conclusions concern the completeness and presentation of the analysis rather than the causes of the observed economic changes.
+
+## 5.3 Limitations and Future Improvements
+
+This study has several limitations that affect the interpretation and scope of its findings. Each limitation also suggests a possible improvement for future analysis.
+
+**Limited Time Period**
+
+The analysis covers only 2006–2009, using 2006 as the pre-crisis baseline. Although this period allows comparisons during the Global Financial Crisis, it does not capture economic developments or recovery after 2009. Therefore, the findings cannot establish whether the observed changes were temporary or continued in subsequent years. With more time, the analysis could be extended to include several years after 2009 to examine longer-term trends and recovery patterns.
+
+**Limited Economy Selection**
+
+The study examines only five economies selected by total real GDP in 2006, as explained in Section 3.2. While this approach provides a consistent basis for selecting large economies, it excludes smaller economies that may have experienced different changes in real GDP per capita. Consequently, the findings cannot be generalised to all economies worldwide. A future analysis could include a larger and more diverse group of economies to investigate whether similar patterns appear beyond the selected five.
+
+**Data Reliability and Measurement Uncertainty**
+
+The study relies on real GDP per capita estimates from the Maddison Project Database 2023. Although the data quality checks in Section 3.4 confirmed that the selected observations were complete and internally consistent, they could not establish whether the estimates were free from measurement errors. Such uncertainty may affect the precision of the reported percentage changes, particularly when interpreting relatively small differences, such as Germany's 2.50% increase in real GDP per capita in 2009 relative to 2006. Therefore, small differences should be interpreted cautiously rather than treated as exact measures of economic change. With more time, the results could be compared with estimates from other established economic datasets to assess their consistency and identify potential discrepancies.
+
+**Descriptive Analysis and Causal Interpretation**
+
+The study uses descriptive comparisons of real GDP per capita levels and percentage changes relative to 2006, as presented in Sections 3.3 and 4. It does not account for other economic factors that may have influenced GDP per capita during the study period. Therefore, the observed changes cannot be attributed directly to the Global Financial Crisis. With additional time and suitable data, further analysis could incorporate other economic indicators and statistical methods to investigate possible explanations for the observed differences. However, establishing causal effects would require an appropriate research design beyond descriptive comparisons.
+
+Overall, these limitations restrict the generalisability, precision and interpretation of the findings but do not prevent the study from addressing its descriptive research question.
+
 # 6. Deployment
 
 # References

@@ -68,7 +68,7 @@ The use of real GDP per capita in constant international dollars supports compar
 
 The selected dataset contains 20 observations covering five economies from 2006 to 2009. The data quality assessment found no missing values in any of the six original variables and no duplicate observations based on `countrycode` and `year`. Each economy has four annual observations, confirming complete coverage of the study period. Furthermore, no zero or negative values were found in `gdppc` or `pop`. These results indicate that the selected data are sufficiently complete and suitable for the planned analysis without requiring missing-value imputation or the removal of invalid observations.
 
-However, the original dataset includes observations for historical entities such as Former USSR (`SUN`), Czechoslovakia (`CSK`) and Former Yugoslavia (`YUG`) in 2006. These historical entries require consideration when ranking economies by total real GDP, because they may not represent separate economies existing in the baseline year.
+However, the original dataset includes observations for historical entities such as Former USSR (`SUN`) in 2006. These historical entries require consideration when ranking economies by total real GDP, because they may not represent separate economies existing in the baseline year.
 
 In particular, Former USSR would appear among the five largest entries in 2006 if included in the ranking. Since the Soviet Union dissolved in 1991 (U.S. Department of State, n.d.), `SUN` was excluded from the ranking. Following this exclusion, Germany became the fifth-largest economy. The exclusion was applied during economy selection rather than by modifying the original dataset.
 
@@ -96,7 +96,7 @@ An alternative would be to rank economies directly by `gdppc`, without calculati
 
 ## 3.2 Economy Selection
 
-The dataset was first filtered to retain observations from 2006. Former USSR (`SUN`) was then excluded from the ranking because it did not represent a separate economy existing in that year, as explained in Section 2.3. The remaining economies were arranged in descending order of total real GDP, and the first five entries were selected using `slice_head()`. The selected economies were the United States, China, Japan, India and Germany.
+The dataset was first filtered to retain observations from 2006. The economies were then ranked in descending order of total real GDP using `arrange()`, and the initial ranking was inspected. Former USSR (`SUN`) was identified in the ranking and subsequently excluded because it did not represent a separate economy existing in 2006, as explained in Section 2.3. The first five entries from the remaining ranking were then selected using `slice_head()`. The selected economies were the United States, China, Japan, India and Germany.
 
 The year 2006 was chosen to rank economies according to their economic size before the Global Financial Crisis, avoiding selection based on changes during the crisis.
 

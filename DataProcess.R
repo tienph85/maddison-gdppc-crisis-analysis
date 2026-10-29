@@ -15,7 +15,6 @@ colSums(is.na(dataset))
 # Dataset Description
 range(dataset$year, na.rm = TRUE)
 
-
 # Data Preparation
 
 # Calculate total real GDP in billions of 2011 international dollars.
@@ -29,19 +28,21 @@ datasetWithGDP <- mutate(
 # Select 2006 as the pre-crisis baseline year.
 gdpBy2006 <- filter(datasetWithGDP, year == 2006)
 
+# Rank the economies by total real GDP in descending order.
+gdpRank2006 <- arrange(gdpBy2006, desc(GDP))
+gdpRank2006
+
 # Exclude Former USSR (SUN) because the Soviet Union dissolved in 1991.
 # Although the dataset contains a 2006 observation for SUN, it does not
 # represent a separate economy existing in the baseline year.
 gdpRank2006Filter <- filter(
-  gdpBy2006,
+  gdpRank2006,
   countrycode != "SUN"
 )
 
-# Rank the remaining economies by total real GDP in descending order.
-gdpRank2006 <- arrange(gdpRank2006Filter, desc(GDP))
-
 # Select the five largest economies in 2006.
-gdpRank2006Sliced <- slice_head(gdpRank2006, n = 5)
+gdpRank2006Sliced <- slice_head(gdpRank2006Filter, n = 5)
+gdpRank2006Sliced
 
 # Extract the country codes from the ranking.
 top5Codes <- gdpRank2006Sliced$countrycode
@@ -62,6 +63,7 @@ sampleCountry <- sampleCountry |>
   ) |>
   ungroup()
 
+
 # Data Quality Assessment
 
 # Check the number of observations.
@@ -79,20 +81,12 @@ sampleCountryDuplicates
 
 # Check annual coverage for each economy.
 sampleCountry |> count(countrycode)
+sampleCountry
 
 # Check non-positive real GDP per capita and population values.
 sampleCountryInvalid <- sampleCountry |>
   filter(gdppc <= 0 | pop <= 0)
-
 sampleCountryInvalid
-
-# Identify historical entities with observations in 2006.
-dataset |>
-  filter(
-    countrycode %in% c("SUN", "CSK", "YUG"),
-    year == 2006
-  )
-
 
 # Final Dataset Checks
 # Verify selected economy codes.
@@ -136,6 +130,16 @@ ggplot(
     colour = "Economy") +
   scale_x_continuous(breaks = 2006:2009)
 
+# Present real GDP per capita values for the five economies.
+sampleCountry |>
+  select(country, year, gdppc) |>
+  tidyr::pivot_wider(names_from = year, values_from = gdppc) |>
+  rename(Economy = country) |>
+  knitr::kable(
+    caption = "Real GDP per capita (2011 international dollars), 2006–2009",
+    digits = 0
+  )
+
 # Compare percentage changes in real GDP per capita relative to 2006.
 ggplot(
   data = sampleCountry |> filter(year >= 2007 & year <= 2009), 
@@ -146,16 +150,6 @@ ggplot(
         x = "Year",
         y = "Change from 2006 (%)",
         fill = "Economy")
-
-# Present real GDP per capita values for the five economies.
-sampleCountry |>
-  select(country, year, gdppc) |>
-  tidyr::pivot_wider(names_from = year, values_from = gdppc) |>
-  rename(Economy = country) |>
-  knitr::kable(
-    caption = "Real GDP per capita (2011 international dollars), 2006–2009",
-    digits = 0
-  )
 
 
 # Present percentage changes in real GDP per capita relative to 2006.

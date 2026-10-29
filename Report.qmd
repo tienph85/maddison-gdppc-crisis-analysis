@@ -1,5 +1,5 @@
 ---
-title: "Report"
+title: "Real GDP per Capita Changes Across Five Major Economies During the 2007–2009 Global Financial Crisis"
 format: html
 editor: visual
 ---
@@ -24,7 +24,7 @@ Specifically, they need reliable and comparable data to identify changes in real
 
 ## 1.3 Research Question
 
-How did real GDP per capita change between 2006 and 2009 across the five largest economies by total real GDP in 2006—the United States, China, Japan, India, and Germany—during the 2007–2009 Global Financial Crisis?
+How did real GDP per capita change during the 2007–2009 Global Financial Crisis, compared with 2006 levels, across the five largest economies by total real GDP in 2006—the United States, China, Japan, India, and Germany?
 
 ## 1.4 Research Objectives
 
@@ -307,6 +307,12 @@ The study uses descriptive comparisons of real GDP per capita levels and percent
 Overall, these limitations restrict the generalisability, precision and interpretation of the findings but do not prevent the study from addressing its descriptive research question.
 
 # 6. Deployment
+
+This study examined changes in real GDP per capita between 2006 and 2009 across the five largest economies by total real GDP in 2006: the United States, China, Japan, India and Germany. By comparing real GDP per capita trends during the period of the Global Financial Crisis, the analysis identified differences in how this measure changed across the selected economies.
+
+The main finding is that the five economies followed different real GDP per capita trends. By 2009, real GDP per capita in China and India was approximately 20% and 18% higher than in 2006, respectively. Germany remained slightly above its 2006 level, while Japan and the United States were approximately 5% and 4% below their respective 2006 levels. These findings show that changes in real GDP per capita differed considerably across the five economies during the same period.
+
+For economic researchers, these findings provide a starting point for investigating why the patterns differed. Further research could examine additional economic indicators, extend the analysis beyond 2009 and compare a wider range of economies. The results describe changes observed during the Global Financial Crisis but do not establish that the crisis caused them.
 
 # References
 

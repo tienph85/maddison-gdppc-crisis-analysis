@@ -1,8 +1,17 @@
 ---
 title: "Real GDP per Capita Changes Across Five Major Economies During the 2007–2009 Global Financial Crisis"
-format: html
+format:
+  html:
+    embed-resources: true
 editor: visual
 ---
+
+```{r}
+#| label: setup
+#| include: false
+
+source("DataProcess.R")
+```
 
 # 1. Business Understanding
 
@@ -58,7 +67,7 @@ These data are used to identify the five largest economies by total real GDP in 
 
 ## 2.2 Dataset Description
 
-The dataset contains 131,144 observations and six variables, covering the period from 1 CE to 2022. Each observation represents an economy in a particular year.
+The dataset contains `r nrow(dataset)` observations and six variables, covering the period from `r datasetYearRange[1]` CE to `r datasetYearRange[2]`. Each observation represents an economy in a particular year.
 
 The variables `countrycode`, `country` and `region` are stored as character data and identify the economy code, economy name and geographical region, respectively. The remaining variables, `year`, `gdppc` and `pop`, are stored as numeric data. The `year` variable records the observation year, `gdppc` represents real GDP per capita expressed in 2011 international dollars, and `pop` records population in thousands.
 
@@ -66,7 +75,7 @@ The use of real GDP per capita in constant international dollars supports compar
 
 ## 2.3 Data Quality Assessment
 
-The selected dataset contains 20 observations covering five economies from 2006 to 2009. The data quality assessment found no missing values in any of the six original variables and no duplicate observations based on `countrycode` and `year`. Each economy has four annual observations, confirming complete coverage of the study period. Furthermore, no zero or negative values were found in `gdppc` or `pop`. These results indicate that the selected data are sufficiently complete and suitable for the planned analysis without requiring missing-value imputation or the removal of invalid observations.
+The selected dataset contains `r nrow(sampleCountry)` observations covering five economies from 2006 to 2009. The data quality assessment found no missing values in the six original variables and no duplicate country-year records. Each economy has four annual observations, confirming complete coverage of the study period. No non-positive real GDP per capita or population values were found. These results indicate that the selected data are sufficiently complete and suitable for the planned analysis without requiring missing-value imputation or the removal of invalid observations.
 
 However, the original dataset includes observations for historical entities such as Former USSR (`SUN`) in 2006. These historical entries require consideration when ranking economies by total real GDP, because they may not represent separate economies existing in the baseline year.
 
@@ -120,22 +129,15 @@ An alternative would be to calculate year-on-year percentage changes or construc
 
 ## 3.4 Dataset Validation
 
-The final analytical dataset, `sampleCountry`, was validated after data processing. It contains 20 observations and eight variables, covering five economies from 2006 to 2009. The validation found no missing values in any of the eight variables, no duplicate records based on `countrycode` and `year`, and four annual observations for each economy. Furthermore, no zero or negative values were found in `gdppc` or `pop`.
+The final analytical dataset was validated after data processing. It contains `r nrow(sampleCountry)` observations and eight variables, covering five economies from 2006 to 2009. The validation found no missing values or duplicate country-year records, and each economy had four annual observations. Furthermore, no non-positive real GDP per capita or population values were found.
 
-These checks were conducted to ensure that the dataset remained complete and suitable for analysis after creating the `gdppc2006` and `pctChange` variables. The percentage change calculation was also examined. All five economies had a percentage change of 0% in 2006, while the results for 2007–2009 were consistent with their corresponding real GDP per capita values. For example, Japan and the United States recorded negative percentage changes in 2009 because their real GDP per capita values were lower than their respective 2006 levels.
+These checks were conducted to ensure that the dataset remained complete and suitable for analysis after calculating the 2006 baseline and percentage changes. The percentage change calculation was also examined. All five economies had a percentage change of 0% in 2006, while the results for 2007–2009 were consistent with their corresponding real GDP per capita values. For example, Japan and the United States recorded negative percentage changes in 2009 because their real GDP per capita values were lower than their respective 2006 levels.
 
 The validation assumes that the original real GDP per capita and population estimates are reliable and that the absence of missing values, duplicates and non-positive values indicates basic data consistency. However, these checks do not guarantee that all observations are free from measurement errors.
 
 An alternative approach would be to conduct additional statistical checks, such as outlier detection or comparisons with external data sources. These were not applied because the validation focused on data completeness, consistency and the correctness of the calculated variables required to address the research question.
 
 # 4. Modelling
-
-```{r}
-#| label: setup
-#| include: false
-
-source("DataProcess.R")
-```
 
 
 ## 4.1 Line Chart: Real GDP per Capita (2006–2009)
@@ -201,7 +203,7 @@ An alternative would be a grouped bar chart showing real GDP per capita levels f
 
 **What was done**
 
-A grouped bar chart was created to compare percentage changes in real GDP per capita relative to 2006. The horizontal axis represents the years 2007–2009, while the vertical axis represents `pctChange`, expressed as a percentage. The year 2006 was omitted because it serves as the baseline, making its percentage change equal to 0% for every economy. Each economy was represented by a different colour, with bars grouped by year. A horizontal reference line at 0% was included to distinguish values above and below the 2006 baseline.
+A grouped bar chart was created to compare percentage changes in real GDP per capita relative to 2006. The horizontal axis represents the years 2007–2009, while the vertical axis shows percentage changes in real GDP per capita relative to 2006. The year 2006 was omitted because it serves as the baseline, making its percentage change equal to 0% for every economy. Each economy was represented by a different colour, with bars grouped by year. A horizontal reference line at 0% was included to distinguish values above and below the 2006 baseline.
 
 Table 2 was also produced to present the percentage changes in real GDP per capita for each economy in 2007, 2008 and 2009 relative to 2006. The values were rounded to two decimal places. This table complements the grouped bar chart by providing the numerical values used in the comparison.
 
@@ -272,11 +274,11 @@ The analysis was evaluated against the three success criteria established in Sec
 
 **Criterion 1 — Complete data presentation**
 
-The first criterion required real GDP per capita values for all five selected economies from 2006 to 2009. This criterion was met, as Table 1 presents all 20 values, covering five economies across four years. The values were rounded to the nearest whole number for presentation, so minor decimal details are not displayed.
+The first criterion required real GDP per capita values for all five selected economies from 2006 to 2009. This criterion was met, as Table 1 presents all `r nrow(sampleCountry)` values, covering five economies across four years. The values were rounded to the nearest whole number for presentation, so minor decimal details are not displayed.
 
 **Criterion 2 — Quantified changes**
 
-The second criterion required percentage changes in real GDP per capita for each economy in 2007, 2008 and 2009 relative to the 2006 baseline. This criterion was met, as Table 2 reports all 15 percentage changes calculated using the method described in Section 3.3. The results are presented to two decimal places, so small differences may be hidden by rounding.
+The second criterion required percentage changes in real GDP per capita for each economy in 2007, 2008 and 2009 relative to the 2006 baseline. This criterion was met, as Table 2 reports all `r nrow(sampleChanges2007to2009)` percentage changes calculated using the method described in Section 3.3. The results are presented to two decimal places, so small differences may be hidden by rounding.
 
 **Criterion 3 — Clear visual comparison**
 

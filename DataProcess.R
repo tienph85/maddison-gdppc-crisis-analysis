@@ -13,7 +13,8 @@ glimpse(dataset)
 colSums(is.na(dataset))
 
 # Dataset Description
-range(dataset$year, na.rm = TRUE)
+datasetYearRange <- range(dataset$year, na.rm = TRUE)
+datasetYearRange
 
 # Data Preparation
 
@@ -70,7 +71,8 @@ sampleCountry <- sampleCountry |>
 nrow(sampleCountry)
 
 # Check missing values.
-colSums(is.na(sampleCountry))
+sampleMissingCounts <- colSums(is.na(sampleCountry))
+sampleMissingCounts
 
 # Check duplicate country-year records.
 sampleCountryDuplicates <- sampleCountry |>
@@ -112,9 +114,10 @@ sampleCountry |>
   select(countrycode, year, pctChange)
 
 # Check percentage changes from 2007 to 2009.
-sampleCountry |>
+sampleChanges2007to2009 <- sampleCountry |>
   filter(year >= 2007 & year <= 2009) |>
   select(countrycode, year, pctChange)
+sampleChanges2007to2009
 
 # Modelling
 # Visualise real GDP per capita trends across the five selected economies from 2006 to 2009.
